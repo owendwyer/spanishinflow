@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Spanish in Flow - Learn Spanish vocab</title>
+
+    <link rel="stylesheet" href="../css/span.css"></head>
+<body>
+
+<div class='pure-g'>
+<div class = "pure-u-1 text-center" id="top-title">
+	<a href='/'><h1>SPANISH IN FLOW</h1></a>
+</div>
+</div>
+
+<div class='pure-g center'>
+<div class = "pure-u-11-12 pure-u-xl-5-6">
+	<div class="pure-menu pure-menu-horizontal text-center" id="top-menu">
+	    <ul class="pure-menu-list">
+		<li class="pure-menu-item"><a href="./concentration/" class="pure-menu-link round-link link-big">Concentration</a></li>
+		<li class="pure-menu-item"><a href="./hangman/" class="pure-menu-link round-link link-big">Hangman</a></li>
+		<li class="pure-menu-item"><a href="./speed-balls/" class="pure-menu-link round-link link-big">Speed Balls</a></li>
+		<li class="pure-menu-item"><a href="./fast-hands/" class="pure-menu-link round-link link-big">Fast Hands</a></li>
+		<li class="pure-menu-item"><a href="./spelling-bee/" class="pure-menu-link round-link link-big">Spelling Bee</a></li>
+		<li class="pure-menu-item"><a href="./pages/contact/" class="pure-menu-link round-link">Contact</a></li>
+		<li class="pure-menu-item"><a href="./pages/about/" class="pure-menu-link round-link">About</a></li>
+		<li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover"><a href="#" class="pure-menu-link round-link  link-small">Flash Games</a>            
+			<ul class="pure-menu-children" id="top-menu-children">
+				<li class="pure-menu-item"><a href="./concentration/" class="pure-menu-link round-link">Concentration</a></li>
+				<li class="pure-menu-item"><a href="./hangman/" class="pure-menu-link round-link">Hangman</a></li>
+				<li class="pure-menu-item"><a href="./speed-balls/" class="pure-menu-link round-link">Speed Balls</a></li>
+				<li class="pure-menu-item"><a href="./fast-hands/" class="pure-menu-link round-link">Fast Hands</a></li>
+				<li class="pure-menu-item"><a href="./spelling-bee/" class="pure-menu-link round-link">Spelling Bee</a></li>
+
+			    </ul>
+		</li>
+	    </ul>
+	</div>
+</div>
+</div>
+
+<div class='pure-g center'>
+	<div id='main-block' class='pure-u-23-24 pure-u-sm-11-12 pure-u-md-5-6 pure-u-lg-3-4 text-center'>
+		<div id='my-text'>
+
+			<h1><strong>Contact</strong></h1>
+
+			<p>Any comments or feedback are welcome.</p>
+
+			<form id='my-form' class='pure-form pure-form-stacked'>
+				<fieldset>
+					<input id='form-name' type='text' placeholder='Name'>
+					<input id='form-email' type='text' placeholder='Email'>
+					<div class="pure-g">
+					<textarea class='pure-u-1 pure-u-md-1-2' id='form-comment' placeholder='Comment *' required></textarea>
+					</div>
+					<br>
+					<button type="submit" id='my-submit' class="pure-button pure-button-primary">Send</button>
+				</fieldset>
+			</form>
+
+			<p id='sent-message'>Include your email address if you want a reply.</p>
+
+		</div>
+	</div>
+</div>
+
+
+<div class='pure-g text-center'>
+	<div class="pure-u-1" id="my-footer">
+		<p>Owen Dwyer | Content made with <a href='https://createjs.com/'>CreateJS</a> | Site made with <a href='https://purecss.io/'>PureCSS</a> </p>
+	</div>
+</div>
+
+<link href='https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:900|Reem+Kufi' rel='stylesheet' type='text/css'>
+
+<script>
+document.getElementById("my-submit").addEventListener("click",clicked);
+function clicked(event) {
+   	event.preventDefault();
+	var myComment=document.getElementById('form-comment').value;
+	if(myComment.length<1){
+		var comEl=document.getElementById('form-comment');
+		comEl.style.border='1px solid red';
+		comEl.onclick=function(){
+			this.style.border='1px solid #ccc';
+		};
+	}else{
+
+		var myReq=new XMLHttpRequest();
+		myReq.open('POST','https://gtlecomments.co.uk:3000',true);
+		myReq.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+		var myVars={};
+		myVars.name=document.getElementById('form-name').value;
+		myVars.email=document.getElementById('form-email').value;
+		myVars.formType='contact';
+		myVars.comment=myComment;
+		myReq.send(JSON.stringify(myVars));
+		
+		var form=document.getElementById("my-form");
+		form.parentNode.removeChild(form);
+		document.getElementById("sent-message").innerHTML='Message sent!';
+	}
+}
+</script>
+</body>
+</html>
+
+      

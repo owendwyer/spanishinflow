@@ -1,0 +1,39 @@
+{
+	"home":{
+		"dir":"./",
+		"htmlSrc":"home.html"
+	},
+	"about":{
+		"dir":"about",
+		"htmlSrc":"about.html"
+	},
+	"privacy":{
+		"dir":"privacy-policy",
+		"htmlSrc":"privacy.html"
+	},
+	"contact":{
+		"dir":"contact",
+		"htmlSrc":"contact.html"
+	},
+	"animals":{
+		"dir":"animals",
+		"htmlSrc":"animals.html"
+	},
+	"clothes":{
+		"dir":"clothes",
+		"htmlSrc":"clothes.html"
+	},
+	"food":{
+		"dir":"food",
+		"htmlSrc":"food.html"
+	},
+	"jobs":{
+		"dir":"jobs",
+		"htmlSrc":"jobs.html"
+	},
+	"personal":{
+		"dir":"personal",
+		"htmlSrc":"personal.html"
+	}
+}
+

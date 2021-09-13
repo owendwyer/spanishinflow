@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Spanish in Flow - Learn Spanish vocab</title>
+
+    <link rel="stylesheet" href="css/span.css"></head>
+<body>
+
+<div class='pure-g'>
+<div class = "pure-u-1 text-center" id="top-title">
+	<a href='/'><h1>SPANISH IN FLOW</h1></a>
+</div>
+</div>
+
+<div class='pure-g center'>
+<div class = "pure-u-11-12 pure-u-xl-5-6">
+	<div class="pure-menu pure-menu-horizontal text-center" id="top-menu">
+	    <ul class="pure-menu-list">
+		<li class="pure-menu-item"><a href="./concentration/" class="pure-menu-link round-link link-big">Concentration</a></li>
+		<li class="pure-menu-item"><a href="./hangman/" class="pure-menu-link round-link link-big">Hangman</a></li>
+		<li class="pure-menu-item"><a href="./speed-balls/" class="pure-menu-link round-link link-big">Speed Balls</a></li>
+		<li class="pure-menu-item"><a href="./fast-hands/" class="pure-menu-link round-link link-big">Fast Hands</a></li>
+		<li class="pure-menu-item"><a href="./spelling-bee/" class="pure-menu-link round-link link-big">Spelling Bee</a></li>
+		<li class="pure-menu-item"><a href="./pages/contact/" class="pure-menu-link round-link">Contact</a></li>
+		<li class="pure-menu-item"><a href="./pages/about/" class="pure-menu-link round-link">About</a></li>
+		<li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover"><a href="#" class="pure-menu-link round-link  link-small">Flash Games</a>            
+			<ul class="pure-menu-children" id="top-menu-children">
+				<li class="pure-menu-item"><a href="./concentration/" class="pure-menu-link round-link">Concentration</a></li>
+				<li class="pure-menu-item"><a href="./hangman/" class="pure-menu-link round-link">Hangman</a></li>
+				<li class="pure-menu-item"><a href="./speed-balls/" class="pure-menu-link round-link">Speed Balls</a></li>
+				<li class="pure-menu-item"><a href="./fast-hands/" class="pure-menu-link round-link">Fast Hands</a></li>
+				<li class="pure-menu-item"><a href="./spelling-bee/" class="pure-menu-link round-link">Spelling Bee</a></li>
+
+			    </ul>
+		</li>
+	    </ul>
+	</div>
+</div>
+</div>
+
+<div class='pure-g center'>
+	<div id='main-block' class='pure-u-23-24 pure-u-sm-11-12 pure-u-md-5-6 pure-u-lg-3-4 text-center'>
+		<div id='my-game'>
+			<div id='containerDiv'>
+				<canvas id='myCanvas' width='1' height='550'></canvas>
+			</div>
+		</div>
+
+		<div id='my-text'>
+			<h1><strong>Spanish in flow</strong></h1>
+
+			<p>This a game for learning Spanish vocabulary items. To play, you simply listen and then click on the image.</p>
+
+			<p>To begin, click on fast (or slow depending on your preference), and then select a set of content. The sets of content cover all the basic vocabulary items that can be represented with simple images - things like banana or apartment block are easy to represent with an image and so are included; but things like love or courage are much more difficult to show though an image and so are not included.</p>
+
+			<p>After you select a set of content, you will see a line of text and hear an audio clip of the same word, then you just have to click on the matching image. If you don't know, then you can just guess or wait for a few moments for the correct answer to become apparent. It is hoped that through this process vocabulary items can be learned or reviewed through repeated exposure.</p>
+
+			<p>The game gets faster and tries to adapt to the ability of the player in such a way as to make it engaging. Although, if you prefer to keep it simple and slow, then you can select the 'Slow' option on the first screen. When you cycle through all the content a couple of times, the game ends and there is a mini list of scores showing how fast and accurately other people have played the game.</p>
+
+			<p>This is made completely using Javascript and HTML. Although a previous version of this site was predominantly Flash based, this version should be usable without any plugins and on any device. The previous version of this site also had a bunch of other games; these have been removed as they weren't very good and didn't really work that well anymore.</p>
+
+			<p>The game is actually a variation on one from the gamestolearnenglish.com site. I just changed the text and audio clips to be in Spanish rather than in English.</p>
+
+			<p>I hope that you can make use of this in someway or that it can be helpful to you in your studies. If you have any comments or questions that either leave them below or send an email using the contact form.</p>
+		</div>
+	</div>
+
+</div>
+
+<div class='pure-g center'>
+	<div id='comments' class='pure-u-23-24 pure-u-sm-11-12 pure-u-md-5-6 pure-u-lg-3-4'>
+
+		<h1><strong>Comments</strong></h1>
+
+		<ul id='comments-list'>
+
+		</ul>
+
+		<p>Any comments or feedback are welcome.</p>
+
+		<form id='my-form' class='pure-form pure-form-stacked'>
+			<fieldset>
+				<input id='form-name' type='text' placeholder='Name'>
+				<input id='form-email' type='text' placeholder='Email'>
+				<div class="pure-g">
+				<textarea class='pure-u-1 pure-u-md-1-2' id='form-comment' placeholder='Comment *' required></textarea>
+				</div>
+				<br>
+				<button type="submit" id='my-submit' class="pure-button pure-button-primary">Send</button>
+			</fieldset>
+		</form>
+
+		<p id='sent-message'>Include your email address if you want a reply.</p>
+	</div>
+</div>
+
+<div class='pure-g text-center'>
+	<div class="pure-u-1" id="my-footer">
+		<p>Owen Dwyer | Content made with <a href='https://createjs.com/'>CreateJS</a> | Site made with <a href='https://purecss.io/'>PureCSS</a> </p>
+	</div>
+</div>
+
+<link href='//fonts.googleapis.com/css?family=Alegreya+Sans:900|Reem+Kufi' rel='stylesheet' type='text/css'>
+<script src='./js/createjs-2015.11.26.min.js'></script>
+<script src='./js/all.min.5.3.js'></script>
+	<link href='https://fonts.googleapis.com/css?family=Andika' rel='stylesheet'>
+<link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:900|Reem+Kufi|Alegreya+Sans:700|Bowlby+One+SC|Dosis:700|Titillium+Web:900|Wendy+One" rel="stylesheet">
+
+<script>
+var myComs={};
+myComs.called=false;
+myComs.tarY=document.getElementById('comments').getBoundingClientRect().top+window.pageYOffset-800;
+
+myComs.checkY=function(){
+	if(window.pageYOffset>myComs.tarY&&myComs.called===false){
+		myComs.called=true;
+		window.removeEventListener('scroll',myComs.checkY);
+		myComs.loadComments();
+	}
+};
+
+myComs.loadComments=function(){
+		var myReq=new XMLHttpRequest();
+		myReq.open('GET','https://gtlecomments.co.uk:4000/span/comments.json',true);
+		myReq.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		myReq.addEventListener('readystatechange',function(){
+			if(this.readyState===4&&this.status===200){
+				try{
+					var myJson=JSON.parse(this.responseText);
+					myComs.attachComments(myJson.comments);
+				}catch(e){
+					console.log('error - could not parse response ',e);
+				}
+			}
+
+		});
+		myReq.send();
+};
+
+myComs.attachComments=function(coms){
+	var myList=document.getElementById('comments-list');
+	for(var i=coms.length-1;i>=0;i--){
+		var li=document.createElement('li');
+		li.setAttribute('class','comment');
+		var nPar=document.createElement('h4');
+		var hPar=document.createElement('h5');
+		var cPar=document.createElement('p');
+		nPar.appendChild(document.createTextNode(coms[i].name));
+		hPar.appendChild(document.createTextNode(coms[i].date));
+		cPar.appendChild(document.createTextNode(coms[i].comment));
+		li.appendChild(nPar);
+		li.appendChild(hPar);
+		li.appendChild(cPar);
+		myList.appendChild(li);
+	}
+};
+
+myComs.clicked=function(event) {
+   	event.preventDefault();
+	var myComment=document.getElementById('form-comment').value;
+	if(myComment.length<1){
+		var comEl=document.getElementById('form-comment');
+		comEl.style.border='1px solid red';
+		comEl.onclick=function(){
+			this.style.border='1px solid #ccc';
+		};
+	}else{
+
+		var myReq=new XMLHttpRequest();
+		myReq.open('POST','https://gtlecomments.co.uk:3000',true);
+		myReq.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+		var myVars={};
+		myVars.name=document.getElementById('form-name').value;
+		myVars.email=document.getElementById('form-email').value;
+		myVars.formType='comment';
+		myVars.comment=myComment;
+		myReq.send(JSON.stringify(myVars));
+		
+		var form=document.getElementById("my-form");
+		form.parentNode.removeChild(form);
+		document.getElementById("sent-message").innerHTML='Message sent!';
+	}
+}
+
+window.addEventListener('scroll',myComs.checkY);
+document.getElementById("my-submit").addEventListener("click",myComs.clicked);
+</script>
+
+</body>
+</html>
