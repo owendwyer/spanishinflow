@@ -1,0 +1,30 @@
+{
+    "short_name": "Span - Animals",
+    "name": "Span - Animals",
+    "theme_color": "#4A90E2",
+    "background_color": "#F7F8F9",
+    "display": "minimal-ui",
+    "icons": [
+      {
+        "src": "../ims/icons/launcher-icon-1x.png",
+        "type": "image/png",
+        "sizes": "48x48"
+      },
+      {
+        "src": "../ims/icons/launcher-icon-2x.png",
+        "type": "image/png",
+        "sizes": "96x96"
+      },
+      {
+        "src": "../ims/icons/launcher-icon-3x.png",
+        "type": "image/png",
+        "sizes": "144x144"
+      },
+      {
+        "src": "../ims/icons/launcher-icon-4x.png",
+        "type": "image/png",
+        "sizes": "192x192"
+      }
+    ],
+    "start_url": "/?utm_source=launcher"
+  }
