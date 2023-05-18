@@ -8,6 +8,13 @@
 	function gtag(){dataLayer.push(arguments);}
 	gtag('js', new Date());
 	gtag('config', 'UA-23449150-4');
+	if ('serviceWorker' in navigator) {
+	   navigator.serviceWorker.register('service-worker.js')
+		 .then(function(reg){
+		}).catch(function(err) {
+		   console.log("No service worker:", err)
+	   });
+	}
 </script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,6 +22,7 @@
    <link rel="stylesheet" href="https://www.spanishinflow.com/css/span.css"></head>
 
 <title>Spanish In Flow - Clothes</title>
+<link rel="manifest" href="https://www.spanishinflow.com/clothes/manifest.json">
 </head>
 <body>
 
