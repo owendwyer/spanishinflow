@@ -1,6 +1,6 @@
 {
-    "short_name": "Span - Clothes",
-    "name": "Span - Clothes",
+    "short_name": "Span - Jobs",
+    "name": "Span - Jobs",
     "theme_color": "#4A90E2",
     "background_color": "#F7F8F9",
     "display": "minimal-ui",
@@ -26,5 +26,5 @@
         "sizes": "192x192"
       }
     ],
-    "start_url": "https://www.spanishinflow.com/clothes/"
+    "start_url": "https://www.spanishinflow.com/jobs/"
   }
