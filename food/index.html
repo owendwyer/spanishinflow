@@ -4,6 +4,7 @@
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23449150-4"></script>
 <script>
+	
 	window.dataLayer = window.dataLayer || [];
 	function gtag(){dataLayer.push(arguments);}
 	gtag('js', new Date());
@@ -15,6 +16,34 @@
 		   console.log("No service worker:", err)
 	   });
 	}
+
+	window.addEventListener("DOMContentLoaded", async event => {
+	if ('BeforeInstallPromptEvent' in window) {
+		console.log("⏳ BeforeInstallPromptEvent supported but not fired yet");
+	} else {
+		console.log("❌ BeforeInstallPromptEvent NOT supported");    
+	}
+	});
+
+	let deferredPrompt;
+
+	window.addEventListener('beforeinstallprompt', (e) => {
+	// Prevents the default mini-infobar or install dialog from appearing on mobile
+	e.preventDefault();
+	// Save the event because you’ll need to trigger it later.
+	deferredPrompt = e;
+	// Show your customized install prompt for your PWA 
+	console.log("✅ BeforeInstallPromptEvent fired", true);
+	//   deferredPrompt.prompt();
+	});
+
+	window.addEventListener("appinstalled", event => {
+		// navigator.serviceWorker.controller.postMessage('installed')
+	//   console.log('appinstalled')
+		navigator.serviceWorker.controller.postMessage({
+		type: 'MESSAGE_IDENTIFIER',
+		});
+	});
 </script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
