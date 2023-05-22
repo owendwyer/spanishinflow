@@ -29,12 +29,12 @@
 
 	window.addEventListener('beforeinstallprompt', (e) => {
 	// Prevents the default mini-infobar or install dialog from appearing on mobile
-	e.preventDefault();
+	// e.preventDefault();
 	// Save the event because you’ll need to trigger it later.
 	deferredPrompt = e;
 	// Show your customized install prompt for your PWA 
 	console.log("✅ BeforeInstallPromptEvent fired", true);
-	//   deferredPrompt.prompt();
+	  deferredPrompt.prompt();
 	});
 
 	window.addEventListener("appinstalled", event => {
