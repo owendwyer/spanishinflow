@@ -4,31 +4,22 @@
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23449150-4"></script>
 <script>
-	// let myInstallObject={};
-	// console.log('test 2')
+	console.log('test 3')
 
 	window.dataLayer = window.dataLayer || [];
 	function gtag(){dataLayer.push(arguments);}
 	gtag('js', new Date());
 	gtag('config', 'UA-23449150-4');
 
-	// if ('serviceWorker' in navigator)navigator.serviceWorker.register('service-worker.js');
+	if ('serviceWorker' in navigator)navigator.serviceWorker.register('service-worker-online.js');
 
-	// // window.addEventListener("DOMContentLoaded", async event => {
-	// // 	document.getElementById('install-but').addEventListener('click',()=>{
-	// // 		myInstallObject.deferredPrompt.prompt();
-	// // 	});
-	// // });
-
-	// myInstallObject.installClick=function(){
-	// 	myInstallObject.deferredPrompt.prompt();
-	// }
-
-	// window.addEventListener('beforeinstallprompt', (e) => {
-	// 	e.preventDefault();
-	// 	myInstallObject.deferredPrompt = e;
-	// 	console.log("✅ BeforeInstallPromptEvent fired", true);
-	// });
+	window.addEventListener('beforeinstallprompt', (e) => {
+		e.preventDefault();
+		let myDeferredPrompt = e;
+		document.getElementById('install-but').addEventListener('click',()=>{
+	 		myDeferredPrompt.prompt();
+	 	});
+	});
 
 </script>
 <meta charset="utf-8">
@@ -81,6 +72,13 @@
 	<p></p>
 
 
+</div>
+
+
+<div id='install-but'>
+
+	<h1><strong>Install</strong></h1>
+		
 </div>
 
 	</div>
