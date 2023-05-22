@@ -4,52 +4,30 @@
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23449150-4"></script>
 <script>
-	
-	let deferredPrompt;
+	let myInstallObject={};
+
 	window.dataLayer = window.dataLayer || [];
 	function gtag(){dataLayer.push(arguments);}
 	gtag('js', new Date());
 	gtag('config', 'UA-23449150-4');
-	if ('serviceWorker' in navigator) {
-	   navigator.serviceWorker.register('service-worker.js')
-		 .then(function(reg){
-		}).catch(function(err) {
-		   console.log("No service worker:", err)
-	   });
+
+	if ('serviceWorker' in navigator)navigator.serviceWorker.register('service-worker.js');
+
+	// window.addEventListener("DOMContentLoaded", async event => {
+	// 	document.getElementById('install-but').addEventListener('click',()=>{
+	// 		myInstallObject.deferredPrompt.prompt();
+	// 	});
+	// });
+
+	myInstallObject.installClick=function(){
+		myInstallObject.deferredPrompt.prompt();
 	}
 
-	window.addEventListener("DOMContentLoaded", async event => {
-		if ('BeforeInstallPromptEvent' in window) {
-			console.log("⏳ BeforeInstallPromptEvent supported but not fired yet");
-		} else {
-			console.log("❌ BeforeInstallPromptEvent NOT supported");    
-		}
-
-
-		document.getElementById('install-but').addEventListener('click',()=>{
-			console.log('click')
-			deferredPrompt.prompt();
-		});
-
-	});
-
-
 	window.addEventListener('beforeinstallprompt', (e) => {
-	// Prevents the default mini-infobar or install dialog from appearing on mobile
-	// e.preventDefault();
-	// Save the event because you’ll need to trigger it later.
-	deferredPrompt = e;
-	// Show your customized install prompt for your PWA 
-	console.log("✅ BeforeInstallPromptEvent fired", true);
-});
-
-window.addEventListener("appinstalled", event => {
-	// navigator.serviceWorker.controller.postMessage('installed')
-	//   console.log('appinstalled')
-	navigator.serviceWorker.controller.postMessage({
-		type: 'MESSAGE_IDENTIFIER',
+		e.preventDefault();
+		myInstallObject.deferredPrompt = e;
+		console.log("✅ BeforeInstallPromptEvent fired", true);
 	});
-});
 
 </script>
 <meta charset="utf-8">
@@ -104,7 +82,7 @@ window.addEventListener("appinstalled", event => {
 
 </div>
 
-<div id='install-but'>
+<div id='install-but' onclick=myInstallObject.installClick>
 
 	<h1><strong>Install</strong></h1>
 
