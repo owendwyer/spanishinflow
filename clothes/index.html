@@ -5,6 +5,7 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23449150-4"></script>
 <script>
 	
+	let deferredPrompt;
 	window.dataLayer = window.dataLayer || [];
 	function gtag(){dataLayer.push(arguments);}
 	gtag('js', new Date());
@@ -18,14 +19,20 @@
 	}
 
 	window.addEventListener("DOMContentLoaded", async event => {
-	if ('BeforeInstallPromptEvent' in window) {
-		console.log("⏳ BeforeInstallPromptEvent supported but not fired yet");
-	} else {
-		console.log("❌ BeforeInstallPromptEvent NOT supported");    
-	}
+		if ('BeforeInstallPromptEvent' in window) {
+			console.log("⏳ BeforeInstallPromptEvent supported but not fired yet");
+		} else {
+			console.log("❌ BeforeInstallPromptEvent NOT supported");    
+		}
+
+
+		document.getElementById('install-but').addEventListener('click',()=>{
+			console.log('click')
+			deferredPrompt.prompt();
+		});
+
 	});
 
-	let deferredPrompt;
 
 	window.addEventListener('beforeinstallprompt', (e) => {
 	// Prevents the default mini-infobar or install dialog from appearing on mobile
@@ -42,11 +49,6 @@ window.addEventListener("appinstalled", event => {
 	navigator.serviceWorker.controller.postMessage({
 		type: 'MESSAGE_IDENTIFIER',
 	});
-});
-
-document.getElementById('install-but').addEventListener('click',()=>{
-	console.log('click')
-	deferredPrompt.prompt();
 });
 
 </script>
