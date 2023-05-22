@@ -34,16 +34,21 @@
 	deferredPrompt = e;
 	// Show your customized install prompt for your PWA 
 	console.log("✅ BeforeInstallPromptEvent fired", true);
-	  deferredPrompt.prompt();
-	});
+});
 
-	window.addEventListener("appinstalled", event => {
-		// navigator.serviceWorker.controller.postMessage('installed')
+window.addEventListener("appinstalled", event => {
+	// navigator.serviceWorker.controller.postMessage('installed')
 	//   console.log('appinstalled')
-		navigator.serviceWorker.controller.postMessage({
+	navigator.serviceWorker.controller.postMessage({
 		type: 'MESSAGE_IDENTIFIER',
-		});
 	});
+});
+
+document.getElementById('install-but').addEventListener('click',()=>{
+	console.log('click')
+	deferredPrompt.prompt();
+});
+
 </script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -94,6 +99,12 @@
 		
 	<p></p>
 
+
+</div>
+
+<div id='install-but'>
+
+	<h1><strong>Install</strong></h1>
 
 </div>
 
