@@ -10,7 +10,9 @@
 	gtag('js', new Date());
 	gtag('config', 'UA-23449150-4');
 	if ('serviceWorker' in navigator) {
-	   navigator.serviceWorker.register('service-worker.js')
+	   navigator.serviceWorker.register('service-worker.js', {
+        scope: "/animals/"
+      })
 		 .then(function(reg){
 		}).catch(function(err) {
 		   console.log("No service worker:", err)
