@@ -2,6 +2,7 @@
 const urlsToCache = [ 
     "https://www.spanishinflow.com/about/offline.html",
     "https://www.spanishinflow.com/about/css/span.css",
+    "https://www.spanishinflow.com/about/manifest-offline.json",
     "https://www.spanishinflow.com/about/fonts/alegrayasanssc.woff2",
     "https://www.spanishinflow.com/about/fonts/reemkufi.woff2"
 ];
