@@ -1,4 +1,5 @@
 self.addEventListener("install", event => {
+    self.skipWaiting();
     console.log('OFF installed offline sw')
 });
 
