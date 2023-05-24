@@ -19,17 +19,14 @@ self.addEventListener("install", event => {
 });
 
 self.addEventListener("fetch", (e) => {
-    console.log('OFF fetch in offline sw')
-    console.log(`resource: ${e.request.url}`);
-
     e.respondWith(
         (async () => {
           const r = await caches.match(e.request);
-          console.log(`[Service Worker] Fetching resource: ${e.request.url}`);
           if (r) {
+              console.log(`[Service Worker] YES resource: ${e.request.url}`);
             return r;
           }
-          console.log(`[Service Worker] no resource for: ${e.request.url}`);
+          console.log(`[Service Worker] NO resource: ${e.request.url}`);
           const response = await fetch(e.request);
           return response;
         })()
