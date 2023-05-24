@@ -11,9 +11,10 @@
 	gtag('config', 'UA-23449150-4');
 	if ('serviceWorker' in navigator) {
 	   navigator.serviceWorker.register('service-worker-offline.js', {
-        scope: "./animals/"
+        scope: "./"
       })
 		 .then(function(reg){
+		   console.log(reg.scope)
 		}).catch(function(err) {
 		   console.log("No service worker:", err)
 	   });
