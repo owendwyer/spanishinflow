@@ -9,7 +9,7 @@ const urlsToCache = [
     "https://www.spanishinflow.com/js/createjs-2015.11.26.min.js"
 ];
 
-for(let i=0;i<23;i++){
+for(let i=0;i<22;i++){
     let audUrl='https://www.spanishinflow.com/content_2/audio/es/use/s_'+i+'.ogg';
     let audAltUrl='https://www.spanishinflow.com/content_2/audio/es/use/s_'+i+'.mp3';
     let imUrl='https://www.spanishinflow.com/content_2/images/use/s_'+i+'.png';
