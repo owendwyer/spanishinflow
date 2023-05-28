@@ -21,14 +21,17 @@ for(let i=0;i<22;i++){
 self.addEventListener("install", event => {
     self.skipWaiting();
     console.log('OFF installed offline sw')
-    event.waitUntil(
-        caches.open("pwa-assets")
-        .then(cache => {
-            console.log('cache open')
-            return cache.addAll(urlsToCache);
-        })
-    );
 });
+
+self.addEventListener("message", (event) =>{
+    console.log('Message received',event.data);
+    caches.open("pwa-assets").then(cache => {
+        console.log('cache open')
+        return cache.addAll(urlsToCache);
+    })
+    // isInstalled=true;
+  }
+);
 
 self.addEventListener("fetch", (e) => {
     e.respondWith(

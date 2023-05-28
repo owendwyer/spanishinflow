@@ -4,18 +4,17 @@
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23449150-4"></script>
 <script>
-	console.log('test 5')
+	console.log('test 6')
 
-if ('serviceWorker' in navigator) {
-   navigator.serviceWorker.register('service-worker-offline.js', {
-	scope: "./"
-  })
-	 .then(function(reg){
-	   console.log(reg.scope)
-	}).catch(function(err) {
-	   console.log("No service worker:", err)
-   });
-}
+	if ('serviceWorker' in navigator) {
+		navigator.serviceWorker.register('service-worker-offline.js', {scope: "./"})
+	}
+
+	window.addEventListener("appinstalled", event => {
+		navigator.serviceWorker.controller.postMessage({
+		type: 'APP_INSTALLED',
+		});
+	});
 
 </script>
 <meta charset="utf-8">
