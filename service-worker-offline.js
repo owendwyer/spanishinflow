@@ -44,8 +44,9 @@ self.addEventListener("fetch", (e) => {
             return r;
           }
           console.log(`[Service Worker] NO resource: ${e.request.url}`);
-          const response = await fetch(e.request);
-          return response;
+        //   const response = await fetch(e.request);
+        //   return response;
+          return;
         })()
       );
 });
