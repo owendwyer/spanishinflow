@@ -25,10 +25,12 @@ self.addEventListener("install", event => {
 
 self.addEventListener("message", (event) =>{
     console.log('Message received',event.data);
-    caches.open("pwa-assets").then(cache => {
-        console.log('cache open')
-        return cache.addAll(urlsToCache);
-    })
+    if(event.data.type==='APP_INSTALLED'){
+        caches.open("pwa-assets").then(cache => {
+            console.log('cache open')
+            return cache.addAll(urlsToCache);
+        })
+    }
     // isInstalled=true;
   }
 );
