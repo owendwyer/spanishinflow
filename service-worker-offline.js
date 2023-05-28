@@ -5,7 +5,7 @@ const urlsToCache = [
     "https://www.spanishinflow.com/manifest-offline.json",
     "https://www.spanishinflow.com/res/mySprite.png",
     "https://www.spanishinflow.com/res/siteLogo.png",
-    "https://www.spanishinflow.com/js/https://www.spanishinflow.com/js/all.min.5.3.js",
+    "https://www.spanishinflow.com/js/all.min.5.3.js",
     "https://www.spanishinflow.com/js/createjs-2015.11.26.min.js"
 ];
 
