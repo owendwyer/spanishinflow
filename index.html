@@ -3,21 +3,7 @@
 <head>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23449150-4"></script>
-<script>
-	console.log('test 9')
 
-	if ('serviceWorker' in navigator) {
-	   navigator.serviceWorker.register('service-worker.js', {
-        scope: "./"
-      })
-		 .then(function(reg){
-		   console.log(reg.scope)
-		}).catch(function(err) {
-		   console.log("No service worker:", err)
-	   });
-	}
-
-</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -26,8 +12,6 @@
 <script defer src='https://code.createjs.com/createjs-2015.11.26.min.js'></script>
 <script defer src='https://www.spanishinflow.com/js/all.min.5.3.js'></script>
 <title>Spanish In Flow - Learn Spanish Vocab</title>
-
-<link rel="manifest" href="https://www.spanishinflow.com/manifest.json">
 
 </head>
 <body>
